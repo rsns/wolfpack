@@ -1,0 +1,47 @@
+@import "~src/scss/media-queries";
+
+:host {
+  display: block;
+  width: 100%;
+  background-color: #FFB300;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+  height: 80px;
+  margin: 0 auto;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    font-family: Barlow-SemiBold, serif;
+
+    div:nth-child(1) {
+      margin-right: 30px;
+      cursor: pointer;
+    }
+
+    div:nth-child(2) {
+      padding: 15px 25px;
+      border: 1px solid #FFFFFF;
+      border-radius: 4px;
+      cursor: pointer;
+      display: none;
+
+      @include mq('phone-wide') {
+        display: block;
+      }
+    }
+
+    img {
+      display: block;
+
+      @include mq('phone-wide') {
+        display: none;
+      }
+    }
+  }
+}

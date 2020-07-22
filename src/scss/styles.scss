@@ -1,0 +1,17 @@
+@import "reset";
+@import "fonts";
+
+$baseFontColor: #212121;
+
+body {
+  font-family: Barlow-Regular, sans-serif;
+  color: $baseFontColor;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -20px;
+  color: salmon;
+  text-wrap: none;
+  white-space: nowrap;
+}

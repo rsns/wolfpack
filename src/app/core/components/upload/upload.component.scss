@@ -1,0 +1,101 @@
+.upload-modal {
+  display: block;
+  height: 500px;
+  max-width: 400px;
+  width: 85%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #F2F2F2;
+  overflow: scroll;
+  z-index: 3;
+  padding: 15px 15px 25px;
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+}
+
+.upload-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &>div:nth-child(1) {
+    margin: 100px 0 50px 0;
+    font-size: 34px;
+    text-align: center;
+  }
+
+  &>div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &>div:nth-child(2) {
+      margin: 60px auto 40px;
+    }
+
+    &>div:nth-child(3) {
+      font-weight: bold;
+      font-size: 20px;
+      color: #808E95;
+    }
+
+    &>div:nth-child(4) {
+      margin-top: 5px;
+      font-family: Barlow-Light, sans-serif;
+      font-size: 16px;
+      color: #808E95;
+
+      span {
+        color: #F4511E;
+      }
+    }
+  }
+
+  .close {
+    margin-top: auto;
+    align-self: center;
+    font-family: Barlow-Light, sans-serif;
+    font-size: 18px;
+    color: #F4511E;
+    cursor: pointer;
+  }
+}
+
+.upload-container {
+  height: 210px;
+  max-width: 360px;
+  width: 90%;
+  margin: 0 auto;
+  border: 3px dashed #B0BEC5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.files-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px auto;
+  width: 80%;
+  color: #1c8adb;
+}
+
+.files-list .delete-file {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.files-list .delete-file img {
+  width: 30px;
+}

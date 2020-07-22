@@ -1,0 +1,39 @@
+<div class="upload-modal" *ngIf="isOpen">
+
+  <div class="upload-inner-wrap">
+
+    <div> Upload your files </div>
+
+    <div class="upload-container" (click)="fileInput.click()" appDragAndDrop (onFileDropped)="uploadFile($event)">
+
+      <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+
+      <div>
+        <svg width="30" height="36" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.333353 19L7.00002 19V29L17 29V19H23.6667L12 7.33333L0.333353 19ZM23.6667 4V0.666666L0.333353 0.666666V4L23.6667 4Z" fill="#F4511E"/>
+        </svg>
+      </div>
+
+      <div> Drop your files here </div>
+
+      <div> or choose from your <span> computer </span> </div>
+
+    </div>
+
+    <div class="files-list" *ngFor="let file of files;let i= index">
+
+      <p> {{ file }} </p>
+
+      <button class="delete-file" (click)="deleteAttachment(i)">
+        x
+      </button>
+
+    </div>
+
+    <div class="close" (click)="closeUpload()"> Close </div>
+
+  </div>
+
+</div>
+
+<div class="upload-modal-overlay"  *ngIf="isOpen" (click)="closeUpload()"></div>

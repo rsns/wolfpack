@@ -1,0 +1,155 @@
+@import "~src/scss/media-queries";
+
+:host {
+  display: block;
+  width: 100%;
+  background-color: #FAFAFA;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  >label:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 80%;
+    margin-top: 40px;
+
+    @include mq('phablet') {
+      margin-top: 110px;
+    }
+
+    span {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  >div:nth-child(2) {
+    max-width: 400px;
+    width: 80%;
+    margin-top: 50px;
+
+    >span:nth-child(1) {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    div:nth-child(2) {
+      max-width: 300px;
+      margin: 20px auto 50px;
+      display: flex;
+      justify-content: space-between;
+
+      label {
+        width: 130px;
+        height: 100px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #F4511E;
+        border-radius: 4px;
+      }
+
+      label:nth-child(1) {
+        color: #FFFFFF;
+      }
+
+      label:nth-child(2) {
+        background-color: #F2F2F2;
+      }
+    }
+  }
+}
+
+.price {
+  font-family: Barlow-SemiBold, sans-serif;
+  font-size: 44px;
+  text-align: center;
+  margin-top: 20px;
+
+  span:nth-child(1) {
+    font-family: Barlow-Light, sans-serif;
+    font-size: 23px;
+    vertical-align: super;
+  }
+
+  span:nth-child(2) {
+    font-family: Barlow-Light, sans-serif;
+    font-size: 12px;
+    vertical-align: top;
+    display: block;
+  }
+}
+
+input[type="text"] {
+  height: 60px;
+  padding-left: 20px;
+  border: 2px solid #B0BEC5;
+  border-radius: 4px;
+
+  &::placeholder {
+    font-family: Barlow-Light, sans-serif;
+    color: #808E95;
+  }
+}
+
+input[type="text"].ng-dirty.ng-invalid {
+  border: 2px solid salmon;
+
+  &::placeholder {
+    font-family: Barlow-Light, sans-serif;
+    color: salmon;
+  }
+}
+
+label {
+  position: relative;
+}
+
+input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.check {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked ~ .check {
+  background-color: #1A237E;
+}
+
+input[type="radio"].ng-dirty.ng-invalid ~ .check {
+  background-color: salmon;
+}
+
+button {
+  max-width: 400px;
+  width: 80%;
+  height: 50px;
+  margin-bottom: 60px;
+  background-color: #4527A0;
+  color: white;
+  border-radius: 4px;
+  border: none;
+
+  @include mq('phablet') {
+    margin-bottom: 100px;
+  }
+
+  @include mq('phone') {
+    max-width: 200px;
+    width: 100%;
+  }
+}

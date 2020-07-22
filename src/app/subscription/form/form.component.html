@@ -1,0 +1,44 @@
+<form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    <span> Email address </span>
+
+    <input type="text" formControlName="email" placeholder="Your email" email required>
+
+    <div class="error-message" *ngIf="emailErrorMessage"> {{ emailErrorMessage }} </div>
+  </label>
+
+  <div formGroupName="subscription">
+
+    <span> Choose the price </span>
+
+    <div>
+      <label>
+        <input type="radio" value="weekly" formControlName="type">
+
+        <span class="check"></span>
+
+        <span class="price">
+          <span> € </span> 120 <span> monthly </span>
+        </span>
+
+        <div class="error-message" *ngIf="subscriptionErrorMessage"> {{ subscriptionErrorMessage }} </div>
+
+      </label>
+
+      <label>
+        <input type="radio" value="monthly" formControlName="type">
+
+        <span class="check"></span>
+
+        <span class="price">
+          <span> € </span> 40 <span> weekly </span>
+        </span>
+      </label>
+
+    </div>
+  </div>
+
+  <button type="submit"> Send </button>
+
+</form>

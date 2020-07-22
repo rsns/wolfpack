@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'wolfpack';
+  isOpen: boolean;
+
+  openUpload() {
+    this.isOpen = true;
+  }
+
+  closeUpload() {
+    this.isOpen = false;
+  }
 }
