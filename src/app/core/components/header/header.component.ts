@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent {
   @Output() onOpen = new EventEmitter();
 
-  constructor() { }
+  constructor(private viewportScroller: ViewportScroller) {}
 
   openUpload(): void {
     this.onOpen.emit();
+  }
+
+  onClick(elementId: string): void {
+    this.viewportScroller.scrollToAnchor(elementId);
   }
 }

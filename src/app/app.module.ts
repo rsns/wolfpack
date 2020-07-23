@@ -9,7 +9,7 @@ import { HeroImageComponent } from './subscription/hero-image/hero-image.compone
 import { FormComponent } from './subscription/form/form.component';
 import { DragAndDropDirective } from './core/directives/drag-and-drop.directive';
 import { UploadComponent } from './core/components/upload/upload.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
